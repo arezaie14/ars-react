@@ -6,10 +6,40 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [
+    "react",
+    "ars-react",
+    "webpack",
+    "code-splitting",
+    "react-router",
+    "server-side-rendering",
+    "dynamic-import",
+    "react-loadable",
+    "react-async-components",
+    "dynamic-rendering",
+    "dynamic-routing",
+    "dynamic-importing",
+    "router",
+    "async-router",
+    "redux",
+    "react-redux",
+    "react-router-dom",
+    "redux-thunk",
+    "middleware",
+    "axios",
+    "ars",
+    "module",
+    "react-dom"
+  ],
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/arezaie14/ars-react.git"
+  },
+  "homepage": "https://github.com/arezaie14/ars-react",
   "author": "Amin Rezaie",
   "license": "ISC",
   "bundleDependencies": false,
-  "dependencies": {
+  "devDependencies": {
     "@loadable/component": "^5.14.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
