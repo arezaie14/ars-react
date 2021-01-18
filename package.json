@@ -1,6 +1,6 @@
 {
   "name": "ars-react",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "description": "Making React and Redux and React router dom easy to use and make  with ARS react",
   "main": "index.js",
   "scripts": {
@@ -32,8 +32,8 @@
     "react-dom"
   ],
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/arezaie14/ars-react.git"
+    "type": "git",
+    "url": "https://github.com/arezaie14/ars-react.git"
   },
   "homepage": "https://github.com/arezaie14/ars-react",
   "author": "Amin Rezaie",
