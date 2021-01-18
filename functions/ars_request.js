@@ -19,7 +19,7 @@ ars.send_request = (method, url, data, headers) => {
             data,
             headers,
             withCredentials: true
-        }
+        };
 
         if (method === "get")
             delete options["data"];
@@ -37,10 +37,10 @@ ars.send_request = (method, url, data, headers) => {
             return err(error);
         });
     });
-}
+};
 ars.post = (url, data_to_pass, headers) => {
     return ars.send_request("post", url, data_to_pass, headers);
-}
+};
 ars.get = (url, data_to_pass, headers) => {
     return ars.send_request("get", url, data_to_pass, headers);
-}
+};

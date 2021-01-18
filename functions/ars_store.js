@@ -12,5 +12,5 @@ ars.store = {
             ars.store.reducers[key] = item;
         }
     }
-}
+};
 ars.store.db = createStore(ars.store.get_reducers, {}, composeWithDevTools(applyMiddleware(...[thunk])));

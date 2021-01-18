@@ -5,7 +5,7 @@ ars.load_module = function (url_or_data_fn, component) {
     let load_fn = {};
     let data_to_pass = {};
     if (typeof component !== "function")
-        Error("Need to use component!")
+        Error("Need to use component!");
 
     if (typeof url_or_data_fn === "function") {
         load_fn = url_or_data_fn;
