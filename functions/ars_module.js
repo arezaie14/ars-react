@@ -27,7 +27,7 @@ ars.load_module = function (url_or_data_fn, component) {
         load_fn = () => async (dispatch) => {
             try {
                 const res = await ars.get(url_or_data_fn);
-                data_to_pass = res.data;
+                data_to_pass = {data:res.data};
                 dispatch({type: "ars"})
             } catch (e) {
 
@@ -35,7 +35,7 @@ ars.load_module = function (url_or_data_fn, component) {
         }
     }
     return connect(
-        (state) => ({data: data_to_pass}),
+        (state) => (data_to_pass),
         {load_fn}
     )((props) => {
         if (props.load_fn && typeof props.load_fn === "function") {
