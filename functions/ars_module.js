@@ -7,7 +7,21 @@ ars.load_module = function (url_or_data_fn, component) {
     if (typeof component !== "function")
         Error("Need to use component!");
 
-    if (typeof url_or_data_fn === "function") {
+    if (typeof url_or_data_fn === "object") {
+
+        load_fn = () => async (dispatch) => {
+            for (const [param, url] of Object.entries(url_or_data_fn)) {
+                try {
+                    const res = await ars.get(url);
+                    data_to_pass[param] = res.data;
+                } catch (e) {
+
+                }
+                dispatch({type: "ars"})
+            }
+
+        }
+    } else if (typeof url_or_data_fn === "function") {
         load_fn = url_or_data_fn;
     } else {
         load_fn = () => async (dispatch) => {
