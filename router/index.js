@@ -35,7 +35,7 @@
 
 import "../index";
 import React, {useState, useEffect, Component} from 'react';
-import {Route, Link} from "react-router-dom";
+import {Route, Link, BrowserRouter as Router} from "react-router-dom";
 import loadable from "@loadable/component";
 import Page404 from "../Page404";
 import path from "path";
@@ -47,7 +47,7 @@ if (!ars.routes) {
     }
 }
 
-export {Link, React, useState, useEffect, Component};
+export {Link, React, useState, useEffect, Component, Router};
 export default props => {
 
     let url = props.url;
