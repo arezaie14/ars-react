@@ -35,7 +35,7 @@
 
 import "../index";
 import React, {useState, useEffect, Component} from 'react';
-import {Route, Link, BrowserRouter as Router} from "react-router-dom";
+import {Route, Link, BrowserRouter as Router, Switch} from "react-router-dom";
 import loadable from "@loadable/component";
 import Page404 from "../Page404";
 import path from "path";
@@ -47,7 +47,7 @@ if (!ars.routes) {
     }
 }
 
-export {Link, React, useState, useEffect, Component, Router};
+export {Link, React, useState, useEffect, Component, Router, Switch};
 export default props => {
 
     let url = props.url;
@@ -65,7 +65,7 @@ export default props => {
                 url: (page) => {
                     const url_struct = ars.routes.path[key].url_struct;
                     const url_params = url_struct.replace(/:(.*?)?(.*)/g, "");
-                    return path.normalize(url_params + page);
+                    return ( path.normalize(url_params + page));
                 }
             }
 
@@ -87,7 +87,6 @@ export default props => {
         exact: !!props.exact,
         path: url,
         render: url_data => {
-
             let url_params = url_data.match.params;
             let path = "", last_comp = "";
 
@@ -100,6 +99,27 @@ export default props => {
             for (const [key, val] of Object.entries(url_params)) {
                 if (path) path += "/" + val; else path += val;
                 last_comp = val;
+            }
+
+            var made_url = "";
+            if (url_params) {
+                for (const [key, value] of Object.entries(url_params)) {
+                    made_url+="/"+value;
+                }
+            }
+            if (!made_url)
+                made_url=url;
+
+
+            if (!ars.exact_urls)
+                ars.exact_urls = {};
+            if (props.exact && !ars.exact_urls[made_url]) {
+                ars.exact_urls[made_url] = path;
+            }
+
+            if (ars.exact_urls[made_url] && ars.exact_urls[made_url] != path) {
+                console.log("sasdasd")
+                return;
             }
 
             /**
