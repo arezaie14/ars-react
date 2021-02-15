@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 
 ars.load_module = function (url_or_data_fn, component) {
     let load_fn = {};
-    let data_to_pass = {};
+    let data_to_pass = {data:{}};
     if (typeof component !== "function")
         Error("Need to use component!");
 
