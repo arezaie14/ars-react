@@ -10,6 +10,6 @@ ars.api = {
     url: (api_name, v) => {
         if (!v)
             v = "v1";
-        return ars.api.base_url[v] + api_name;
+        return ars.api.base_url[v] +v+"/"+ api_name;
     }
 }
