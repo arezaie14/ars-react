@@ -1,6 +1,6 @@
 {
   "name": "ars-react",
-  "version": "0.0.26",
+  "version": "0.0.27",
   "description": "Making React and Redux and React router dom easy to use and make  with ARS react",
   "main": "index.js",
   "scripts": {
